@@ -1,113 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PomodoroFocus</title>
-    <link rel="stylesheet" href="style.css">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PomodoroFocus</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav>
-        <div class="nav-left">
-            <i class="fa-solid fa-clock"></i>
-        <div class="logo">PomodoroFocus</div>
-        </div>
-        
-        <i class="fa-solid fa-gear"></i>
-    </nav>
-<section>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-left">
+      <i class="fa-solid fa-clock"></i>
+      <div class="logo">PomodoroFocus</div>
+    </div>
+    <i class="fa-solid fa-gear"></i>
+  </nav>
+
+  <!-- Main Section -->
+  <section>
+
+    <!-- Timer -->
     <div class="timer-container-2">
-         <div class="timer-container">
+      <div class="timer-container active">
         <div class="options">
-            <button class="pomodoro">Pomodoro</button>
-            <button class="short">Short Break</button>
-            <button class="long">Long Break</button>
+          <button class="pomodoro active">Pomodoro</button>
+          <button class="short">Short Break</button>
+          <button class="long">Long Break</button>
         </div>
-        <div class="countdown">00:00</div>
-        <p>#1 Focus Session</p>
+
+        <div class="countdown">45:00</div>
+        <div class="footnote">
+          <p>#1 Focus Session</p>
+        </div>
+
         <div class="buttons">
-              <button class="start">START</button>
-              <button class="restart"></button>
+          <button class="start">START</button>
+          <button class="restart"><i class="fa-solid fa-rotate-right"></i></button>
         </div>
-    </div>
-    </div>
-    
-    <div class="music-container">
-        <div class="catagory"><i class="fa-solid fa-music"></i>Background Music</div>
-        <div class="player">
-            <div class="song-image" id="song-image"></div>
-            <p id="song-name">Placeholder beat</p>
-            <p id="artist">the placeholders</p>
-            <div class="player-controls">
-                <i class="fa-solid fa-backward-step"></i>
-                <i class="fa-solid fa-play active"></i>
-                <i class="fa-solid fa-pause"></i>
-                <i class="fa-solid fa-foward-step"></i>
-            </div>
-              <div class="player-progress" id="player-progress">
-            <div class="progress" id="progress"></div>
-            <div class="music-duration">
-               <span id="current-time">0:00</span>
-               <span id="duration">0:00</span>
-            </div>
-        </div>
-        </div>
-        <div class="sound-options">
-            <div class="nature" id="nature">
-                <i class="fa-solid fa-leaf"></i>
-                Nature
-            </div>
-             <div class="rain" id="rain">
-                <i class="fa-solid fa-cloud-rain"></i>
-                Rain
-            </div>
-             <div class="fireplace" id="fireplace">
-                <i class="fa-solid fa-fire"></i>
-                Fireplace
-            </div>
-             <div class="white-noise" id="white-noise">
-                <i class="fa-solid fa-headphones"></i>
-                White Noise
-            </div>
-        </div>
-        <div class="music-options">
-            <div class="lofi" id="lofi-music">
-                <i class="fa-solid fa-radio"></i>
-                Lofi
-            </div>
-            <div class="classical" id="classical">
-                <i class='bx  bx-piano-grand'  ></i> 
-                Classical
-            </div>
-            <div class="jazz" id="jazz">
-                Jazz
-                <i class='bx  bx-list-music'  ></i> 
-            </div>
-        </div>
-    </div>
-    <div class="task-container">
-        <div class="catagory">
-            <i class="fa-solid fa-list-check"></i>
-            Tasks
-        </div>
-        <p id="clear">Clear Completed</p>
-        <input type="text" placeholder="Add a new task...">
-        <button class="add" id="add">+</button>
-        <div class="tasks">
-            <div class="task" id="task">
-                <input id="completed" type="checkbox">
-                <p id="name"></p>
-                <i class="fa-solid fa-trash-can" id="delete"></i>
-            </div>
-        </div>
+      </div>
     </div>
 
-</section>
-   
-    
+    <!-- Music Player -->
+    <div class="music-container-2">
+      <div class="music-player">
+
+        <div class="catagory">
+          <i class="fa-solid fa-music"></i> Background Music
+        </div>
+
+        <div class="music-player-content">
+
+          <!-- Music Info -->
+          <div class="music-info">
+            <div class="music-icon">
+              <i class="fa-solid fa-music"></i>
+            </div>
+            <div class="music-details">
+              <div class="music-title">Lofi Study Beats</div>
+              <div class="music-subtitle">Focus Playlist</div>
+            </div>
+          </div>
+
+          <!-- Controls -->
+          <div class="music-controls">
+            <button class="control-btn previous"><i class="fa-solid fa-backward"></i></button>
+            <button class="control-btn play"><i class="fa-solid fa-play"></i></button>
+            <button class="control-btn next"><i class="fa-solid fa-forward"></i></button>
+          </div>
+        </div>
+
+        <!-- Progress and Sound Options -->
+        <div class="progress-container">
+          <div class="progress-bar">
+            <div class="progress"></div>
+          </div>
+
+          <div class="time-info">
+            <span class="current-time">1:23</span>
+            <span class="total-time">3:45</span>
+          </div>
+
+          <div class="sound-options-container">
+              <div class="sound-options-text">
+                <p class="sound-options-p">Sound Options</p>
+              </div>
+            <div class="sound-options">
+              <div class="nature" id="nature">
+                <i class="fa-solid fa-leaf"></i> Nature
+              </div>
+              <div class="rain" id="rain">
+                <i class="fa-solid fa-cloud-rain"></i> Rain
+              </div>
+              <div class="fireplace" id="fireplace">
+                <i class="fa-solid fa-fire"></i> Fireplace
+              </div>
+              <div class="white-noise" id="white-noise">
+                <i class="fa-solid fa-headphones"></i> White Noise
+              </div>
+            </div>
+            <div class="music-options-container">
+              <div class="music-options-text">
+                <p class="music-options-p">Music Options</p>
+              </div>
+              <div class="music-options">
+              
+              <div class="lofi" id="lofi-music">
+                <i class="fa-solid fa-radio"></i> Lofi
+              </div>
+              <div class="classical" id="classical">
+                <i class='bx bx-piano-grand'></i> Classical
+              </div>
+              <div class="jazz" id="jazz">
+               <i class='bx bx-list-music'></i> Jazz
+              </div>
+              <div class="minecraft" id="minecraft">
+               <i class="fa-solid fa-house"></i> Minecraft
+              </div>
+            </div>
+              
+            </div>
+
+            
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Task List -->
+    <div class="task-container">
+      <div class="catagory">
+        <i class="fa-solid fa-list-check"></i> Tasks
+      </div>
+
+      <p id="clear">Clear Completed</p>
+
+      <input type="text" placeholder="Add a new task..." />
+      <button class="add" id="add">+</button>
+
+      <div class="tasks">
+        <div class="task" id="task">
+          <input id="completed" type="checkbox" />
+          <p id="name"></p>
+          <i class="fa-solid fa-trash-can" id="delete"></i>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
 </body>
 </html>
