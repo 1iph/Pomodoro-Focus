@@ -1,1 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PomodoroFocus</title>
+    <link rel="stylesheet" href="style.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
+</head>
+<body>
+    <nav>
+        <div class="nav-left">
+            <i class="fa-solid fa-clock"></i>
+        <div class="logo">PomodoroFocus</div>
+        </div>
+        
+        <i class="fa-solid fa-gear"></i>
+    </nav>
+<section>
+    <div class="timer-container-2">
+         <div class="timer-container">
+        <div class="options">
+            <button class="pomodoro">Pomodoro</button>
+            <button class="short">Short Break</button>
+            <button class="long">Long Break</button>
+        </div>
+        <div class="countdown">00:00</div>
+        <p>#1 Focus Session</p>
+        <div class="buttons">
+              <button class="start">START</button>
+              <button class="restart"></button>
+        </div>
+    </div>
+    </div>
+    
+    <div class="music-container">
+        <div class="catagory"><i class="fa-solid fa-music"></i>Background Music</div>
+        <div class="player">
+            <div class="song-image" id="song-image"></div>
+            <p id="song-name">Placeholder beat</p>
+            <p id="artist">the placeholders</p>
+            <div class="player-controls">
+                <i class="fa-solid fa-backward-step"></i>
+                <i class="fa-solid fa-play active"></i>
+                <i class="fa-solid fa-pause"></i>
+                <i class="fa-solid fa-foward-step"></i>
+            </div>
+              <div class="player-progress" id="player-progress">
+            <div class="progress" id="progress"></div>
+            <div class="music-duration">
+               <span id="current-time">0:00</span>
+               <span id="duration">0:00</span>
+            </div>
+        </div>
+        </div>
+        <div class="sound-options">
+            <div class="nature" id="nature">
+                <i class="fa-solid fa-leaf"></i>
+                Nature
+            </div>
+             <div class="rain" id="rain">
+                <i class="fa-solid fa-cloud-rain"></i>
+                Rain
+            </div>
+             <div class="fireplace" id="fireplace">
+                <i class="fa-solid fa-fire"></i>
+                Fireplace
+            </div>
+             <div class="white-noise" id="white-noise">
+                <i class="fa-solid fa-headphones"></i>
+                White Noise
+            </div>
+        </div>
+        <div class="music-options">
+            <div class="lofi" id="lofi-music">
+                <i class="fa-solid fa-radio"></i>
+                Lofi
+            </div>
+            <div class="classical" id="classical">
+                <i class='bx  bx-piano-grand'  ></i> 
+                Classical
+            </div>
+            <div class="jazz" id="jazz">
+                Jazz
+                <i class='bx  bx-list-music'  ></i> 
+            </div>
+        </div>
+    </div>
+    <div class="task-container">
+        <div class="catagory">
+            <i class="fa-solid fa-list-check"></i>
+            Tasks
+        </div>
+        <p id="clear">Clear Completed</p>
+        <input type="text" placeholder="Add a new task...">
+        <button class="add" id="add">+</button>
+        <div class="tasks">
+            <div class="task" id="task">
+                <input id="completed" type="checkbox">
+                <p id="name"></p>
+                <i class="fa-solid fa-trash-can" id="delete"></i>
+            </div>
+        </div>
+    </div>
+
+</section>
+   
+    
+</body>
+</html>
