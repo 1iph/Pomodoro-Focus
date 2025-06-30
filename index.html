@@ -17,7 +17,7 @@
       <i class="fa-solid fa-clock"></i>
       <div class="logo">PomodoroFocus</div>
     </div>
-    <i class="fa-solid fa-gear"></i>
+    <i class="fa-solid fa-gear" id="settings"></i>
   </nav>
 
   <!-- Main Section -->
@@ -27,9 +27,9 @@
     <div class="timer-container-2">
       <div class="timer-container active">
         <div class="options">
-          <button class="pomodoro active">Pomodoro</button>
-          <button class="short">Short Break</button>
-          <button class="long">Long Break</button>
+          <button class="pomodoro active" id=pomodoro>Pomodoro</button>
+          <button class="short" id="short-break">Short Break</button>
+          <button class="long" id="long-break">Long Break</button>
         </div>
 
         <div class="countdown">45:00</div>
@@ -38,7 +38,8 @@
         </div>
 
         <div class="buttons">
-          <button class="start">START</button>
+          <button class="start active" id="start">START</button>
+          <button class="pause " id="pause">PAUSE</button>
           <button class="restart"><i class="fa-solid fa-rotate-right"></i></button>
         </div>
       </div>
@@ -143,15 +144,40 @@
       <button class="add" id="add">+</button>
 
       <div class="tasks">
-        <div class="task" id="task">
-          <input id="completed" type="checkbox" />
-          <p id="name"></p>
-          <i class="fa-solid fa-trash-can" id="delete"></i>
-        </div>
-      </div>
+  <div class="task">
+    <div class="task-left">
+      <input type="checkbox" />
+      <p>Complete project proposal</p>
+    </div>
+    
+    <i class="fa-solid fa-trash-can"></i>
+  </div>
+
+  <div class="task">
+    <div class="task-left">
+      <input type="checkbox" />
+      <p>Research competitors</p>
+    </div>
+    
+    <i class="fa-solid fa-trash-can"></i>
+  </div>
+
+  <div class="task">
+    <div class="task-left">
+      <input type="checkbox" />
+      <p>Prepare meeting notes</p>
+    </div>
+    
+    <i class="fa-solid fa-trash-can"></i>
+  </div>
+  
+  
+</div>
+
     </div>
 
   </section>
-
+  
+ <script src="script.js"></script>
 </body>
 </html>

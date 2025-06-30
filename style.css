@@ -102,6 +102,27 @@ nav {
     margin-top: 50px;
 }
 .start{
+    display: none;
+    padding: 1.2rem 3.6rem;
+    border: none;
+    border-radius: 55px;
+    margin-right: 20px;
+    background-color: rgb(27, 188, 220);
+    font-size: 25px;
+    font-weight: 600;
+    color: white;
+    box-shadow: 0 5px 17px 1px rgba(0, 0, 0, 0.2);
+    
+}
+.start.active{
+    display: block;
+}
+.start:active{
+    background-color: rgb(62, 199, 226);
+}
+
+.pause{
+    display: none;
     padding: 1.2rem 3.6rem;
     border: none;
     border-radius: 55px;
@@ -113,7 +134,10 @@ nav {
     box-shadow: 0 5px 17px 1px rgba(0, 0, 0, 0.2);
 
 }
-.start:active{
+.pause.active{
+    display: block;
+}
+.pause:active{
     background-color: rgb(62, 199, 226);
 }
 .restart{
@@ -275,6 +299,7 @@ nav {
 .music-options{
     display: flex;
     
+  font-weight: 500;
 }
 .nature{
     display: flex;
@@ -408,4 +433,126 @@ nav {
 }
 .minecraft:hover, .jazz:hover, .classical:hover, .lofi:hover{
     transform: scale(1.03);
+}
+.task-container {
+  background-color: #f5f5f5;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  padding: 20px 24px;
+  max-width: 57.5rem;
+  margin: 0 auto 40px;
+  font-family: 'Inter', sans-serif;
+}
+
+.task-container .catagory {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1e1e1e;
+  margin-bottom: 12px;
+}
+
+.task-container .catagory i {
+  color: rgb(27, 188, 220);
+  margin-right: 10px;
+}
+
+#clear {
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: right;
+  margin-bottom: 16px;
+}
+
+.task-container input[type="text"] {
+  width: 90%;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  outline: none;
+  margin-bottom: 16px;
+}
+
+.task-container button {
+  margin-left: 10px;  
+  position: absolute;  
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background-color:  rgb(27, 188, 220);
+  border: none;
+  color: white;
+  font-size: 22px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.task-container .add:hover {
+  background-color:  rgb(76, 212, 240);
+}
+
+.tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Individual task item */
+.task {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #ececec;
+}
+
+.task-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.task input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.task p {
+  font-size: 15px;
+  color: #333;
+  margin: 0;
+  flex: 1;
+  word-break: break-word;
+}
+
+.task .pomodoro-badge {
+  background-color: #ffeae6;
+  color:  rgb(27, 188, 220);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+.task i {
+  color:  rgb(27, 188, 220);
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 14px;
+  transition: transform 0.2s ease;
+}
+
+.task i:hover {
+  transform: scale(1.1);
 }
