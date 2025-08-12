@@ -1,3 +1,342 @@
+/* --- Settings Modal/Page Styles --- */
+.settings-modal {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.18);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.settings-content {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.13);
+    padding: 2.5rem 2.5rem 2rem 2.5rem;
+    min-width: 350px;
+    max-width: 95vw;
+    min-height: 350px;
+    font-family: 'Inter', sans-serif;
+    color: #222;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.settings-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.settings-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+.settings-close {
+    font-size: 2rem;
+    cursor: pointer;
+    color: #888;
+    transition: color 0.2s;
+}
+.settings-close:hover {
+    color: #e57373;
+}
+.settings-section {
+    margin-bottom: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+.settings-section label {
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+    color: #444;
+}
+.settings-section input[type="number"] {
+    width: 60px;
+    margin-left: 0.5rem;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    padding: 4px 8px;
+    font-size: 1rem;
+}
+.settings-section input[type="range"]{
+    width: 100%;
+    accent-color: var(--main-color, rgb(27,188,220));
+    background: transparent;
+    margin: 0.5rem 0 0.2rem 0; 
+    height: 6px; 
+    border-radius: 3px;
+    outline: none;
+    box-shadow: none;
+}
+.settings-section input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none; 
+    width: 18px;
+    height: 18px; 
+    border-radius: 50%;
+    background: #fff;
+    border: 2px solid var(--main-color, rgb(27,188,220));
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+    margin-top: -6px; 
+}
+.settings-section input[type="range"]::-moz-range-thumb {
+    width: 18px;
+    height: 18px; 
+    border-radius: 50%;
+    background: #fff;
+    border: 2px solid var(--main-color, rgb(27,188,220));
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+    margin-top: -6px;
+}
+.settings-section input[type="range"]::-ms-thumb {
+    width: 18px;
+    height: 18px; 
+    border-radius: 50%;
+    background: #fff;
+    border: 2px solid var(--main-color, rgb(27,188,220));
+    cursor: pointer;
+    margin-top: -6px; 
+    
+}
+.settings-section input[type="range"]::-webkit-slider-runnable-track {
+    height: 6px;
+    border-radius: 3px;
+    background: var(--main-color, rgb(27,188,220));
+}
+.settings-section input[type="range"]::-ms-fill-lower {
+    background: var(--main-color, rgb(27,188,220));
+}
+.settings-section input[type="range"]::-ms-fill-upper {
+    background: var(--main-color, rgb(27,188,220));
+}
+.settings-section input[type="range"]:focus::-ms-fill-lower {
+    background: var(--main-color, rgb(27,188,220));
+}
+.settings-section input[type="range"]:focus::-ms-fill-upper {
+    background: var(--main-color, rgb(27,188,220));
+}
+/* --- Responsive Design --- */
+@media (max-width: 1200px) {
+    .timer-container, .music-player, .task-container {
+        width: 95vw;
+        min-width: unset;
+        max-width: 100vw;
+    }
+}
+@media (max-width: 900px) {
+    .timer-container, .music-player, .task-container {
+        width: 100vw;
+        min-width: unset;
+        max-width: 100vw;
+        border-radius: 0;
+        box-shadow: none;
+    }
+    .settings-content {
+        min-width: 90vw;
+        padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+    }
+    .music-player {
+        height: auto;
+        min-height: 20rem;
+    }
+}
+@media (max-width: 700px) {
+    nav {
+        flex-direction: column;
+        padding: 0.7rem;
+        gap: 0.5rem;
+    }
+    .logo {
+        font-size: 1.1rem;
+    }
+    .timer-container, .music-player, .task-container {
+        width: 100vw;
+        min-width: unset;
+        max-width: 100vw;
+        border-radius: 0;
+        box-shadow: none;
+        padding: 0.5rem 0.2rem;
+    }
+    .settings-content {
+        min-width: 98vw;
+        padding: 0.5rem 0.1rem 0.5rem 0.1rem;
+    }
+    .music-player {
+        height: auto;
+        min-height: 15rem;
+    }
+    .music-player-content, .options, .buttons {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.5rem;
+    }
+    .music-info {
+        flex-direction: row;
+        gap: 0.5rem;
+    }
+    .catagory, .music-title, .music-subtitle {
+        font-size: 1rem;
+    }
+    .countdown {
+        font-size: 3rem;
+    }
+    .start, .pause {
+        font-size: 1rem;
+        padding: 0.7rem 1.5rem;
+    }
+    .task-container input[type="text"] {
+        font-size: 1rem;
+        padding: 0.5rem 0.7rem;
+    }
+    .task {
+        padding: 0.5rem 0.5rem;
+    }
+}
+@media (max-width: 500px) {
+    .timer-container, .music-player, .task-container {
+        width: 100vw;
+        min-width: unset;
+        max-width: 100vw;
+        border-radius: 0;
+        box-shadow: none;
+        padding: 0.1rem 0.1rem;
+    }
+    .settings-content {
+        min-width: 100vw;
+        padding: 0.1rem 0.1rem 0.1rem 0.1rem;
+    }
+    .music-player {
+        height: auto;
+        min-height: 10rem;
+    }
+    .countdown {
+        font-size: 2rem;
+    }
+    .start, .pause {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.7rem;
+    }
+    .task-container input[type="text"] {
+        font-size: 0.9rem;
+        padding: 0.3rem 0.4rem;
+    }
+    .task {
+        padding: 0.2rem 0.2rem;
+    }
+}
+
+.settings-save {
+    margin-top: 0.7rem;
+    background: var(--main-color, rgb(27,188,220));
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 18px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.settings-save:hover {
+    background: var(--main-color, #1bbcdc);
+}
+.theme-options {
+    display: flex;
+    gap: 1rem;
+}
+.theme-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 2px solid #eee;
+    cursor: pointer;
+    outline: none;
+    transition: border 0.2s;
+}
+.theme-btn.selected, .theme-btn:focus {
+    border: 2px solid #222;
+}
+/* --- Volume Slider Styling --- */
+.volume-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1.2rem;
+    padding: 0;
+    width: 220px;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.volume-container i {
+    color: var(--main-color, rgb(27,188,220));
+    font-size: 1.2rem;
+}
+.volume-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 160px;
+    height: 18px;
+    background: var(--main-color, rgb(27,188,220));
+    border-radius: 9px;
+    outline: none;
+    transition: background 0.3s;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+    display: flex;
+    align-items: center;
+}
+.volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+    border: 2px solid var(--main-color, rgb(27,188,220));
+    margin-top: -2px;
+}
+.volume-slider::-moz-range-thumb {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+    border: 2px solid rgb(27, 188, 220);
+}
+.volume-slider::-ms-thumb {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+    border: 2px solid rgb(27, 188, 220);
+}
+.volume-slider:focus {
+    background: rgb(27, 188, 220);
+}
+.volume-slider::-webkit-slider-runnable-track {
+    height: 18px;
+    border-radius: 9px;
+    background: rgb(27, 188, 220);
+}
+.volume-slider::-ms-fill-lower {
+    background: rgb(27, 188, 220);
+}
+.volume-slider::-ms-fill-upper {
+    background: rgb(27, 188, 220);
+}
+.volume-slider:focus::-ms-fill-lower {
+    background: rgb(27, 188, 220);
+}
+.volume-slider:focus::-ms-fill-upper {
+    background: rgb(27, 188, 220);
+}
 html{
     box-sizing: border-box;
 }
@@ -27,7 +366,7 @@ nav {
     font-weight: 600;
 }
 .fa-clock{
-    color: rgb(27, 188, 220);
+    color: var(--main-color, rgb(27,188,220));
     font-size: 1.3rem;
 }
 .fa-gear{
@@ -74,16 +413,16 @@ nav {
     cursor: pointer;
 }
 .pomodoro.active{
-     background-color: rgb(27, 188, 220);
-     color: white;
+    background-color: var(--main-color, rgb(27,188,220));
+    color: white;
 }
 .short.active{
-     background-color: rgb(27, 188, 220);
-     color: white;
+    background-color: var(--main-color, rgb(27,188,220));
+    color: white;
 }
 .long.active{
-     background-color: rgb(27, 188, 220);
-     color: white;
+    background-color: var(--main-color, rgb(27,188,220));
+    color: white;
 }
 .countdown{
     display: flex;
@@ -107,7 +446,7 @@ nav {
     border: none;
     border-radius: 55px;
     margin-right: 20px;
-    background-color: rgb(27, 188, 220);
+    background-color: var(--main-color, rgb(27,188,220));
     font-size: 25px;
     font-weight: 600;
     color: white;
@@ -228,7 +567,7 @@ nav {
 }
 
 .control-btn.play {
-    background-color: rgb(27, 188, 220);
+    background-color: var(--main-color, rgb(27,188,220));
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -259,16 +598,16 @@ nav {
 .progress-bar .progress {
     position: absolute;
     height: 100%;
-    background-color: rgb(27, 188, 220);
+    background-color: var(--main-color, rgb(27,188,220));
     border-radius: 2px;
-    width: 30%; /* This represents the current progress */
+    width: 0%; /* This represents the current progress */
 }
 
 .time-info {
     display: flex;
     justify-content: space-between;
     font-size: 12px;
-    color: #666;
+    color: var(--main-color, rgb(27,188,220));
     margin-left: 10px;
 }
 .catagory{
@@ -279,7 +618,7 @@ nav {
 }
 .fa-music{
     margin-right: 10px;
-    color: rgb(27, 188, 220);
+    color: var(--main-color, rgb(27,188,220));
 }
 .sound-options-container{
     display: flex;
@@ -454,7 +793,7 @@ nav {
 }
 
 .task-container .catagory i {
-  color: rgb(27, 188, 220);
+    color: var(--main-color, rgb(27,188,220));
   margin-right: 10px;
 }
 
@@ -483,7 +822,7 @@ nav {
   width: 40px;
   height: 40px;
   border-radius: 8px;
-  background-color:  rgb(27, 188, 220);
+    background-color:  var(--main-color, rgb(27,188,220));
   border: none;
   color: white;
   font-size: 22px;
@@ -536,7 +875,7 @@ nav {
 
 .task .pomodoro-badge {
   background-color: #ffeae6;
-  color:  rgb(27, 188, 220);
+    color:  var(--main-color, rgb(27,188,220));
   font-size: 13px;
   font-weight: 500;
   padding: 4px 10px;
@@ -546,7 +885,7 @@ nav {
 }
 
 .task i {
-  color:  rgb(27, 188, 220);
+    color:  var(--main-color, rgb(27,188,220));
   cursor: pointer;
   font-size: 16px;
   margin-left: 14px;

@@ -18,6 +18,34 @@
       <div class="logo">PomodoroFocus</div>
     </div>
     <i class="fa-solid fa-gear" id="settings"></i>
+  <!-- Settings Modal -->
+  <div id="settings-modal" class="settings-modal" style="display:none;">
+    <div class="settings-content">
+      <div class="settings-header">
+        <span class="settings-title">Settings</span>
+        <span class="settings-close" id="settings-close">&times;</span>
+      </div>
+      <div class="settings-section">
+        <h3>Pomodoro Timer</h3>
+        <label>Pomodoro (minutes): <input type="number" id="pomodoro-minutes" min="1" max="120" value="45"></label>
+        <label>Short Break (minutes): <input type="number" id="short-minutes" min="1" max="60" value="5"></label>
+        <label>Long Break (minutes): <input type="number" id="long-minutes" min="1" max="60" value="15"></label>
+        <button id="save-timer-settings" class="settings-save">Save Timer</button>
+      </div>
+      <div class="settings-section">
+        <h3>Volume</h3>
+        <input type="range" id="settings-volume" min="0" max="1" step="0.01" value="0.5">
+      </div>
+      <div class="settings-section">
+        <h3>Theme</h3>
+        <div class="theme-options">
+          <label for="theme-color-picker">Pick a color:</label>
+          <input type="color" id="theme-color-picker" name="theme-color-picker" value="#1bbcdc" style="width: 40px; height: 40px; border: none; background: none; cursor: pointer; display: block; margin-bottom: 0.5rem;">
+          <button id="save-theme-color" class="settings-save" style="display: block; width: 100%; margin: 0 auto;">Save Color</button>
+        </div>
+      </div>
+    </div>
+  </div>
   </nav>
 
   <!-- Main Section -->
@@ -66,6 +94,15 @@
             </div>
           </div>
 
+          <!-- Volume Slider -->
+          <!-- Volume Slider (above controls) -->
+           <!--
+            <div class="volume-container">
+            <i class="fa-solid fa-volume-high"></i>
+            <input type="range" min="0" max="1" step="0.01" value="0.5" class="volume-slider" id="volume-slider" />
+          </div>
+          -->
+        
           <!-- Controls -->
           <div class="music-controls">
             <button class="control-btn previous"><i class="fa-solid fa-backward"></i></button>
@@ -81,8 +118,8 @@
           </div>
 
           <div class="time-info">
-            <span class="current-time">1:23</span>
-            <span class="total-time">3:45</span>
+            <span class="current-time">0:00</span>
+            <span class="total-time">0:00</span>
           </div>
 
           <div class="sound-options-container">
@@ -178,6 +215,12 @@
 
   </section>
   
- <script src="script.js"></script>
+</section>
+
+<footer style="width:100%;text-align:center;padding:1.5rem 0 1rem 0;font-size:1rem;color:#888;background:transparent;letter-spacing:1px;">
+  2025 Made by Noah McClung
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
