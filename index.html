@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,53 +10,52 @@
   <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
-<body>
 
-  <!-- Navigation -->
+<body>
   <nav>
     <div class="nav-left">
       <i class="fa-solid fa-clock"></i>
       <div class="logo">PomodoroFocus</div>
     </div>
     <i class="fa-solid fa-gear" id="settings"></i>
-  <!-- Settings Modal -->
-  <div id="settings-modal" class="settings-modal" style="display:none;">
-    <div class="settings-content">
-      <div class="settings-header">
-        <span class="settings-title">Settings</span>
-        <span class="settings-close" id="settings-close">&times;</span>
-      </div>
-      <div class="settings-section">
-        <h3>Pomodoro Timer</h3>
-        <label>Pomodoro (minutes): <input type="number" id="pomodoro-minutes" min="1" max="120" value="45"></label>
-        <label>Short Break (minutes): <input type="number" id="short-minutes" min="1" max="60" value="5"></label>
-        <label>Long Break (minutes): <input type="number" id="long-minutes" min="1" max="60" value="15"></label>
-        <button id="save-timer-settings" class="settings-save">Save Timer</button>
-      </div>
-      <div class="settings-section">
-        <h3>Volume</h3>
-        <input type="range" id="settings-volume" min="0" max="1" step="0.01" value="0.5">
-      </div>
-      <div class="settings-section">
-        <h3>Theme</h3>
-        <div class="theme-options">
-          <label for="theme-color-picker">Pick a color:</label>
-          <input type="color" id="theme-color-picker" name="theme-color-picker" value="#1bbcdc" style="width: 40px; height: 40px; border: none; background: none; cursor: pointer; display: block; margin-bottom: 0.5rem;">
-          <button id="save-theme-color" class="settings-save" style="display: block; width: 100%; margin: 0 auto;">Save Color</button>
+
+    <!-- Settings Modal -->
+    <div id="settings-modal" class="settings-modal" style="display:none;">
+      <div class="settings-content">
+        <div class="settings-header">
+          <span class="settings-title">Settings</span>
+          <span class="settings-close" id="settings-close">&times;</span>
+        </div>
+        <div class="settings-section">
+          <h3>Pomodoro Timer</h3>
+          <label>Pomodoro (minutes): <input type="number" id="pomodoro-minutes" min="1" max="120" value="45"></label>
+          <label>Short Break (minutes): <input type="number" id="short-minutes" min="1" max="60" value="5"></label>
+          <label>Long Break (minutes): <input type="number" id="long-minutes" min="1" max="60" value="15"></label>
+          <button id="save-timer-settings" class="settings-save">Save Timer</button>
+        </div>
+        <div class="settings-section">
+          <h3>Volume</h3>
+          <input type="range" id="settings-volume" min="0" max="1" step="0.01" value="0.5">
+        </div>
+        <div class="settings-section">
+          <h3>Theme</h3>
+          <div class="theme-options">
+            <label for="theme-color-picker">Pick a color:</label>
+            <input type="color" id="theme-color-picker" name="theme-color-picker" value="#1bbcdc">
+            <button id="save-theme-color" class="settings-save">Save Color</button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
   </nav>
 
   <!-- Main Section -->
-  <section>
-
+  <main>
     <!-- Timer -->
     <div class="timer-container-2">
       <div class="timer-container active">
         <div class="options">
-          <button class="pomodoro active" id=pomodoro>Pomodoro</button>
+          <button class="pomodoro active" id="pomodoro">Pomodoro</button>
           <button class="short" id="short-break">Short Break</button>
           <button class="long" id="long-break">Long Break</button>
         </div>
@@ -67,85 +67,73 @@
 
         <div class="buttons">
           <button class="start active" id="start">START</button>
-          <button class="pause " id="pause">PAUSE</button>
+          <button class="pause" id="pause">PAUSE</button>
           <button class="restart"><i class="fa-solid fa-rotate-right"></i></button>
         </div>
       </div>
     </div>
 
     <!-- Music Player -->
-    <div class="music-container-2">
-      <div class="music-player">
+    <div class="music-player">
+      <div class="catagory">
+        <i class="fa-solid fa-music"></i> Background Music
+      </div>
 
-        <div class="catagory">
-          <i class="fa-solid fa-music"></i> Background Music
-        </div>
-
-        <div class="music-player-content">
-
-          <!-- Music Info -->
-          <div class="music-info">
-            <div class="music-icon">
-              <i class="fa-solid fa-music"></i>
-            </div>
-            <div class="music-details">
-              <div class="music-title">Lofi Study Beats</div>
-              <div class="music-subtitle">Focus Playlist</div>
-            </div>
+      <div class="music-player-content">
+        <!-- Music Info -->
+        <div class="music-info">
+          <div class="music-icon">
+            <i class="fa-solid fa-music"></i>
           </div>
-
-          <!-- Volume Slider -->
-          <!-- Volume Slider (above controls) -->
-           <!--
-            <div class="volume-container">
-            <i class="fa-solid fa-volume-high"></i>
-            <input type="range" min="0" max="1" step="0.01" value="0.5" class="volume-slider" id="volume-slider" />
-          </div>
-          -->
-        
-          <!-- Controls -->
-          <div class="music-controls">
-            <button class="control-btn previous"><i class="fa-solid fa-backward"></i></button>
-            <button class="control-btn play"><i class="fa-solid fa-play"></i></button>
-            <button class="control-btn next"><i class="fa-solid fa-forward"></i></button>
+          <div class="music-details">
+            <div class="music-title">Lofi Study Beats</div>
+            <div class="music-subtitle">Focus Playlist</div>
           </div>
         </div>
 
-        <!-- Progress and Sound Options -->
-        <div class="progress-container">
-          <div class="progress-bar">
-            <div class="progress"></div>
-          </div>
+        <!-- Controls -->
+        <div class="music-controls">
+          <button class="control-btn previous"><i class="fa-solid fa-backward"></i></button>
+          <button class="control-btn play"><i class="fa-solid fa-play"></i></button>
+          <button class="control-btn next"><i class="fa-solid fa-forward"></i></button>
+        </div>
+      </div>
 
-          <div class="time-info">
-            <span class="current-time">0:00</span>
-            <span class="total-time">0:00</span>
-          </div>
+      <!-- Progress and Sound Options -->
+      <div class="progress-container">
+        <div class="progress-bar">
+          <div class="progress"></div>
+        </div>
 
-          <div class="sound-options-container">
-              <div class="sound-options-text">
-                <p class="sound-options-p">Sound Options</p>
-              </div>
-            <div class="sound-options">
-              <div class="nature" id="nature">
-                <i class="fa-solid fa-leaf"></i> Nature
-              </div>
-              <div class="rain" id="rain">
-                <i class="fa-solid fa-cloud-rain"></i> Rain
-              </div>
-              <div class="fireplace" id="fireplace">
-                <i class="fa-solid fa-fire"></i> Fireplace
-              </div>
-              <div class="white-noise" id="white-noise">
-                <i class="fa-solid fa-headphones"></i> White Noise
-              </div>
+        <div class="time-info">
+          <span class="current-time">0:00</span>
+          <span class="total-time">0:00</span>
+        </div>
+
+        <div class="sound-options-container">
+          <div class="sound-options-text">
+            <p class="sound-options-p">Sound Options</p>
+          </div>
+          <div class="sound-options">
+            <div class="nature" id="nature">
+              <i class="fa-solid fa-leaf"></i> Nature
             </div>
-            <div class="music-options-container">
-              <div class="music-options-text">
-                <p class="music-options-p">Music Options</p>
-              </div>
-              <div class="music-options">
-              
+            <div class="rain" id="rain">
+              <i class="fa-solid fa-cloud-rain"></i> Rain
+            </div>
+            <div class="fireplace" id="fireplace">
+              <i class="fa-solid fa-fire"></i> Fireplace
+            </div>
+            <div class="white-noise" id="white-noise">
+              <i class="fa-solid fa-headphones"></i> White Noise
+            </div>
+          </div>
+
+          <div class="music-options-container">
+            <div class="music-options-text">
+              <p class="music-options-p">Music Options</p>
+            </div>
+            <div class="music-options">
               <div class="lofi" id="lofi-music">
                 <i class="fa-solid fa-radio"></i> Lofi
               </div>
@@ -153,17 +141,12 @@
                 <i class='bx bx-piano-grand'></i> Classical
               </div>
               <div class="jazz" id="jazz">
-               <i class='bx bx-list-music'></i> Jazz
+                <i class='bx bx-list-music'></i> Jazz
               </div>
               <div class="minecraft" id="minecraft">
-               <i class="fa-solid fa-house"></i> Minecraft
+                <i class="fa-solid fa-house"></i> Minecraft
               </div>
             </div>
-              
-            </div>
-
-            
-
           </div>
         </div>
       </div>
@@ -177,50 +160,29 @@
 
       <p id="clear">Clear Completed</p>
 
-      <input type="text" placeholder="Add a new task..." />
-      <button class="add" id="add">+</button>
+      <div class="task-input-container">
+        <input type="text" placeholder="Add a new task..." />
+        <button class="add" id="add">+</button>
+      </div>
 
       <div class="tasks">
-  <div class="task">
-    <div class="task-left">
-      <input type="checkbox" />
-      <p>Complete project proposal</p>
-    </div>
-    
-    <i class="fa-solid fa-trash-can"></i>
-  </div>
-
-  <div class="task">
-    <div class="task-left">
-      <input type="checkbox" />
-      <p>Research competitors</p>
-    </div>
-    
-    <i class="fa-solid fa-trash-can"></i>
-  </div>
-
-  <div class="task">
-    <div class="task-left">
-      <input type="checkbox" />
-      <p>Prepare meeting notes</p>
-    </div>
-    
-    <i class="fa-solid fa-trash-can"></i>
-  </div>
-  
-  
-</div>
-
+        <div class="task">
+          <div class="task-left">
+            <input type="checkbox" />
+            <p>Prepare meeting notes</p>
+          </div>
+          <i class="fa-solid fa-trash-can"></i>
+        </div>
+      </div>
     </div>
 
-  </section>
-  
-</section>
 
-<footer style="width:100%;text-align:center;padding:1.5rem 0 1rem 0;font-size:1rem;color:#888;background:transparent;letter-spacing:1px;">
-  2025 Made by Noah McClung
-</footer>
+  <footer
+    style="width:100%;text-align:center;padding:1.5rem 0 1rem 0;font-size:1rem;color:#888;background:transparent;letter-spacing:1px;">
+    2025 Made by Noah McClung
+  </footer>
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>
