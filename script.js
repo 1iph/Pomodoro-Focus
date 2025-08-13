@@ -11,6 +11,52 @@ document.addEventListener('DOMContentLoaded', function () {
   const volumeSlider = document.getElementById('settings-volume');
   const colorPicker = document.getElementById('theme-color-picker');
   const saveColorBtn = document.getElementById('save-theme-color');
+  const darkModeToggle = document.getElementById('darkModeToggle');
+  const root = document.documentElement;
+
+  // --- DARK MODE: Load preference on startup ---
+  if (localStorage.getItem('darkMode') === 'true') {
+    root.classList.add('dark-mode');
+    if (darkModeToggle) darkModeToggle.checked = true;
+  } else {
+    root.classList.remove('dark-mode');
+    if (darkModeToggle) darkModeToggle.checked = false;
+  }
+
+  // --- DARK MODE: Toggle on checkbox change ---
+  if (darkModeToggle) {
+    darkModeToggle.addEventListener('change', function () {
+      if (this.checked) {
+        root.classList.add('dark-mode');
+        localStorage.setItem('darkMode', 'true');
+      } else {
+        root.classList.remove('dark-mode');
+        localStorage.setItem('darkMode', 'false');
+      }
+    });
+  }
+
+  // --- DARK MODE: Apply when Save Color is clicked ---
+  if (saveColorBtn && darkModeToggle) {
+    saveColorBtn.addEventListener('click', function () {
+      // Save theme color as before
+      if (colorPicker) {
+        localStorage.setItem('themeColor', colorPicker.value);
+        applyThemeColor(colorPicker.value);
+      }
+      // Apply dark mode state based on toggle
+      if (darkModeToggle.checked) {
+        root.classList.add('dark-mode');
+        localStorage.setItem('darkMode', 'true');
+      } else {
+        root.classList.remove('dark-mode');
+        localStorage.setItem('darkMode', 'false');
+      }
+      // Close modal and reload to apply color everywhere
+      if (settingsModal) settingsModal.style.display = 'none';
+      window.location.reload();
+    });
+  }
 
   // Open settings
   if (settingsBtn && settingsModal && settingsClose) {
@@ -23,6 +69,10 @@ document.addEventListener('DOMContentLoaded', function () {
       // Set color picker value to saved color or default
       const savedColor = localStorage.getItem('themeColor') || '#1bbcdc';
       if (colorPicker) colorPicker.value = savedColor;
+      // Set dark mode toggle state
+      if (darkModeToggle) {
+        darkModeToggle.checked = localStorage.getItem('darkMode') === 'true';
+      }
     });
     settingsClose.addEventListener('click', function () {
       settingsModal.style.display = 'none';
@@ -58,15 +108,6 @@ document.addEventListener('DOMContentLoaded', function () {
     document.documentElement.style.setProperty('--main-color', color);
     // Also set on <body> for legacy selectors if needed
     document.body.style.setProperty('--main-color', color);
-  }
-  if (saveColorBtn && colorPicker) {
-    saveColorBtn.addEventListener('click', function () {
-      localStorage.setItem('themeColor', colorPicker.value);
-      applyThemeColor(colorPicker.value);
-      // Close modal and reload to apply color everywhere
-      if (settingsModal) settingsModal.style.display = 'none';
-      window.location.reload();
-    });
   }
   // Apply theme color on load
   applyThemeColor(localStorage.getItem('themeColor') || '#1bbcdc');

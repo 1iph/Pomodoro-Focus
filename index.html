@@ -22,6 +22,7 @@
     <!-- Settings Modal -->
     <div id="settings-modal" class="settings-modal" style="display:none;">
       <div class="settings-content">
+
         <div class="settings-header">
           <span class="settings-title">Settings</span>
           <span class="settings-close" id="settings-close">&times;</span>
@@ -36,6 +37,14 @@
         <div class="settings-section">
           <h3>Volume</h3>
           <input type="range" id="settings-volume" min="0" max="1" step="0.01" value="0.5">
+        </div>
+        <!-- Add inside .settings-content, in a suitable place -->
+        <div class="settings-section">
+          <h3>Appearance</h3>
+          <label for="darkModeToggle">
+            <input type="checkbox" id="darkModeToggle" />
+            Enable Dark Mode
+          </label>
         </div>
         <div class="settings-section">
           <h3>Theme</h3>
@@ -177,12 +186,12 @@
     </div>
 
 
-  <footer
-    style="width:100%;text-align:center;padding:1.5rem 0 1rem 0;font-size:1rem;color:#888;background:transparent;letter-spacing:1px;">
-    2025 Made by Noah McClung
-  </footer>
+    <footer
+      style="width:100%;text-align:center;padding:1.5rem 0 1rem 0;font-size:1rem;color:#888;background:transparent;letter-spacing:1px;">
+      2025 Made by Noah McClung
+    </footer>
 
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

@@ -1,4 +1,4 @@
-    :root {
+:root {
       --main-color: rgb(27,188,220);
       --main-color-hover: rgb(62, 199, 226);
       --background-color: rgb(231, 231, 231);
@@ -123,11 +123,13 @@
     }
 
     .pomodoro:hover, .short:hover, .long:hover {
-      background-color: rgba(27,188,220, 0.1);
+      background-color: var(--main-color);
+      filter: opacity(0.8);
     }
 
     .pomodoro.active:hover, .short.active:hover, .long.active:hover {
-      background-color: var(--main-color-hover);
+      background-color: var(--main-color);
+      filter: opacity(0.8);
     }
 
     /* Countdown */
@@ -176,7 +178,8 @@
     }
 
     .start:hover, .pause:hover {
-      background-color: var(--main-color-hover);
+      background-color: var(--main-color);
+      filter: opacity(0.8);
     }
 
     .restart {
@@ -305,7 +308,8 @@
     }
 
     .control-btn.play:hover {
-      background-color: var(--main-color-hover);
+       background-color: var(--main-color);
+      filter: opacity(0.8);
     }
 
     .control-btn.play i {
@@ -332,6 +336,7 @@
       background-color: var(--main-color);
       border-radius: 3px;
       width: 0%;
+      transition: width 0.2s;
     }
 
     .time-info {
@@ -455,7 +460,8 @@
     }
 
     .task-container .add:hover {
-      background-color: var(--main-color-hover);
+       background-color: var(--main-color);
+      filter: opacity(0.8);
     }
 
     .tasks {
@@ -627,7 +633,8 @@
     }
 
     .settings-save:hover {
-      background: var(--main-color-hover);
+       background-color: var(--main-color);
+      filter: opacity(0.8);
     }
 
     /* Footer */
@@ -796,3 +803,182 @@
         height: 55px;
       }
     }
+    .dark-mode {
+  --main-color: rgb(27,188,220);
+  --main-color-hover: rgb(62, 199, 226);
+  --background-color: #181a1b;
+  --white: #23272a;
+  --text-primary: #f5f6fa;
+  --text-secondary: #b0b3b8;
+  --text-muted: #888;
+  --border-color: #23272a;
+  --shadow: 0 0 10px 4px rgba(0,0,0,0.4);
+  --shadow-light: 0 2px 10px rgba(0,0,0,0.15);
+}
+
+.dark-mode body {
+  background-color: var(--background-color);
+  color: var(--text-primary);
+}
+
+.dark-mode nav,
+.dark-mode .timer-container,
+.dark-mode .music-player,
+.dark-mode .task-container,
+.dark-mode .settings-content {
+  background-color: var(--white);
+  color: var(--text-primary);
+  box-shadow: var(--shadow);
+}
+
+.dark-mode .task {
+  background-color: #23272b;
+  border-color: #23272b;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.45);
+  color: #fff;
+}
+
+.dark-mode .task p {
+  color: #fff;
+}
+
+.dark-mode .music-icon,
+.dark-mode .progress-bar {
+  background-color: #23272a;
+}
+
+.dark-mode .progress-bar .progress {
+  background-color: var(--main-color);
+}
+
+.dark-mode .pomodoro, 
+.dark-mode .short, 
+.dark-mode .long {
+  color: var(--text-secondary);
+}
+
+.dark-mode .pomodoro.active, 
+.dark-mode .short.active, 
+.dark-mode .long.active {
+  color: var(--white);
+}
+
+.dark-mode .nature, 
+.dark-mode .rain, 
+.dark-mode .fireplace, 
+.dark-mode .white-noise, 
+.dark-mode .lofi, 
+.dark-mode .classical, 
+.dark-mode .jazz, 
+.dark-mode .minecraft {
+  background-color: #23272a;
+  color: var(--text-primary);
+}
+
+.dark-mode .nature:hover, 
+.dark-mode .rain:hover, 
+.dark-mode .fireplace:hover, 
+.dark-mode .white-noise:hover, 
+.dark-mode .lofi:hover, 
+.dark-mode .classical:hover, 
+.dark-mode .jazz:hover, 
+.dark-mode .minecraft:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.dark-mode .settings-close:hover {
+  background-color: #23272a;
+}
+
+.dark-mode .settings-section input[type="number"],
+.dark-mode .settings-section input[type="color"] {
+  background: #23272a;
+  color: var(--text-primary);
+  border: 1px solid #444;
+}
+
+.dark-mode .settings-save {
+  background: var(--main-color);
+  color: var(--white);
+}
+
+/* --- DARK MODE STYLES --- */
+html.dark-mode, .dark-mode body {
+  background: #181c20;
+  color: #e0e0e0;
+}
+
+/* Music progress bar visible in dark mode */
+/* .dark-mode .progress {
+  background: #333 !important;
+}
+.dark-mode .progress::after, .dark-mode .progress-bar {
+  background: #1bbcdc !important; /* or your accent color 
+}
+
+/* Sound/music option boxes shadow in dark mode */
+.dark-mode .nature, 
+.dark-mode .rain, 
+.dark-mode .fireplace, 
+.dark-mode .white-noise, 
+.dark-mode .lofi, 
+.dark-mode .classical, 
+.dark-mode .jazz, 
+.dark-mode .minecraft {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.45), 0 1.5px 0 #222;
+  border: 1px solid #222;
+}
+
+/* Remove unused/incorrect selectors for .sound-option/.music-option if present */
+
+/* --- Fix progress bar for both modes --- */
+.progress-bar {
+  height: 6px;
+  background-color: #e0e0e0;
+  border-radius: 3px;
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.progress-bar .progress {
+  position: absolute;
+  height: 100%;
+  background-color: var(--main-color);
+  border-radius: 3px;
+  width: 0%;
+  transition: width 0.2s;
+}
+
+/* --- DARK MODE --- */
+.dark-mode .progress-bar {
+  background-color: #292d30;
+}
+.dark-mode .progress-bar .progress {
+  background-color: var(--main-color);
+}
+
+/* --- Restore dark mode todo input bar styling --- */
+.dark-mode .task-container input[type="text"] {
+  background: #23272b;
+  color: #e0e0e0;
+  border: 1px solid #333;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.5);
+}
+
+/* --- Enhance dark mode task box and checkbox --- */
+.dark-mode .task {
+  background-color: #23272b;
+  border-color: #23272b;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.45);
+  color: #fff;
+}
+
+.dark-mode .task p {
+  color: #fff;
+}
+
+.dark-mode .task input[type="checkbox"] {
+  accent-color: var(--main-color);
+  background: #181a1b;
+  border: 1px solid #444;
+}
